@@ -41,6 +41,7 @@ import { ReactComponent as IconNotNullLineThrough } from '../assets/svg/icon-not
 import { ReactComponent as IconNotNull } from '../assets/svg/icon-not-null.svg';
 import { ReactComponent as IconUniqueLineThrough } from '../assets/svg/icon-unique-line-through.svg';
 import { ReactComponent as IconUnique } from '../assets/svg/icon-unique.svg';
+import { ReactComponent as IconTeam} from '../assets/svg/teams-grey.svg'
 import { FQN_SEPARATOR_CHAR } from '../constants/char.constants';
 import {
   DE_ACTIVE_COLOR,
@@ -236,6 +237,10 @@ export const getEntityLink = (
         `${fullyQualifiedName}s`
       );
 
+    case EntityType.TEAM:
+    case SearchIndex.TEAM:
+        return get
+
     case EntityType.MLMODEL:
     case SearchIndex.MLMODEL:
       return getMlModelPath(fullyQualifiedName);
@@ -245,9 +250,10 @@ export const getEntityLink = (
       return getContainerDetailPath(getDecodedFqn(fullyQualifiedName));
     case SearchIndex.TAG:
       return getTagsDetailsPath(fullyQualifiedName);
-
     case EntityType.DASHBOARD_DATA_MODEL:
       return getDataModelDetailsPath(getDecodedFqn(fullyQualifiedName));
+
+
 
     case EntityType.TEST_CASE:
       return `${getTableTabPath(

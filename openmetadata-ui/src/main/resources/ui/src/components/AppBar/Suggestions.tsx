@@ -35,6 +35,7 @@ import {
   TableSource,
   TagSource,
   TopicSource,
+  TeamSource
 } from '../GlobalSearchProvider/GlobalSearchSuggestions/GlobalSearchSuggestions.interface';
 
 type SuggestionProp = {
@@ -54,23 +55,13 @@ const Suggestions = ({
   const [options, setOptions] = useState<Array<Option>>([]);
   const [tableSuggestions, setTableSuggestions] = useState<TableSource[]>([]);
   const [topicSuggestions, setTopicSuggestions] = useState<TopicSource[]>([]);
-  const [dashboardSuggestions, setDashboardSuggestions] = useState<
-    DashboardSource[]
-  >([]);
-
-  const [pipelineSuggestions, setPipelineSuggestions] = useState<
-    PipelineSource[]
-  >([]);
-  const [mlModelSuggestions, setMlModelSuggestions] = useState<MlModelSource[]>(
-    []
-  );
-  const [containerSuggestions, setContainerSuggestions] = useState<
-    ContainerSearchSource[]
-  >([]);
-  const [glossarySuggestions, setGlossarySuggestions] = useState<
-    GlossarySource[]
-  >([]);
+  const [dashboardSuggestions, setDashboardSuggestions] = useState<DashboardSource[]>([]);
+  const [pipelineSuggestions, setPipelineSuggestions] = useState<PipelineSource[]>([]);
+  const [mlModelSuggestions, setMlModelSuggestions] = useState<MlModelSource[]>([]);
+  const [containerSuggestions, setContainerSuggestions] = useState<ContainerSearchSource[]>([]);
+  const [glossarySuggestions, setGlossarySuggestions] = useState<GlossarySource[]>([]);
   const [tagSuggestions, setTagSuggestions] = useState<TagSource[]>([]);
+  const [teamSuggestions,setTeamSuggestions] = useState<TeamSource[]>([]);
   const isMounting = useRef(true);
 
   const setSuggestions = (options: Array<Option>) => {
@@ -86,6 +77,7 @@ const Suggestions = ({
     );
     setGlossarySuggestions(filterOptionsByIndex(options, SearchIndex.GLOSSARY));
     setTagSuggestions(filterOptionsByIndex(options, SearchIndex.TAG));
+    setTeamSuggestions(filterOptionsByIndex(options SearchIndex.TEAM);
   };
 
   const getSuggestionsForIndex = (
@@ -132,6 +124,7 @@ const Suggestions = ({
             searchIndex: SearchIndex.GLOSSARY,
           },
           { suggestions: tagSuggestions, searchIndex: SearchIndex.TAG },
+          { suggestions: teamSuggestions, searchIndex: SearchIndex.TEAM}
         ].map(({ suggestions, searchIndex }) =>
           getSuggestionsForIndex(suggestions, searchIndex)
         )}

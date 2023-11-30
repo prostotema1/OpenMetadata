@@ -160,6 +160,7 @@ export const globalSearchOptions = [
   { value: SearchIndex.CONTAINER, label: t('label.container') },
   { value: SearchIndex.GLOSSARY, label: t('label.glossary') },
   { value: SearchIndex.TAG, label: t('label.tag') },
+  { value: SearchIndex.TEAM, labal: t('lavel.team') },
 ];
 
 export const versionTypes = [
@@ -177,6 +178,7 @@ export const visibleFilters = [
   'database',
   'databaseschema',
   'servicename',
+  'team',
 ];
 
 export const CHART_WIDGET_DAYS_DURATION = 14;

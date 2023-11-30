@@ -118,6 +118,11 @@ export const getGroupLabel = (index: string) => {
 
       break;
 
+    case SearchIndex.TEAM:
+      label = i18next.t('label.team-plural')
+      icon = Icons.TEAM
+
+      break;
     case SearchIndex.TABLE:
     default:
       label = i18next.t('label.table-plural');

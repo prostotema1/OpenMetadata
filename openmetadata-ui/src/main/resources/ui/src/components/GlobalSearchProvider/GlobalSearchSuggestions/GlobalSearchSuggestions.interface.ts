@@ -67,6 +67,11 @@ export interface TagSource extends CommonSource {
   tag_name: string;
 }
 
+export interface TeamSource extends CommonSource{
+    team_id: string;
+    team_name: string
+}
+
 export interface Option {
   _index: string;
   _id: string;
@@ -77,7 +82,8 @@ export interface Option {
     MlModelSource &
     ContainerSearchSource &
     GlossarySource &
-    TagSource;
+    TagSource &
+    TeamSource;
 }
 
 export type SearchSuggestions =
@@ -88,4 +94,5 @@ export type SearchSuggestions =
   | GlossarySource[]
   | ContainerSearchSource[]
   | DashboardSource[]
-  | MlModelSource[];
+  | MlModelSource[]
+  | TeamSource[];

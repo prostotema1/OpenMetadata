@@ -836,8 +836,11 @@ export const getEntityDetailLink = (
 
     case EntityType.USER_NAME:
       path = getUserPath(fqn, tab, subTab);
-
       break;
+
+    case EntityType.TEAM:
+        path = getTeamAndUserDetailsPath(fqn,tab,subTab);
+        break;
   }
 
   return path;

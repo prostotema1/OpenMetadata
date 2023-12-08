@@ -32,6 +32,7 @@ const ASSETS_NAME = [
   'topic_name',
   'dashboard_name',
   'pipeline_name',
+  'team_name'
 ];
 
 const SearchedData: React.FC<SearchedDataProps> = ({

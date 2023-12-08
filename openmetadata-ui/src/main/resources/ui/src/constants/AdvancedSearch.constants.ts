@@ -505,6 +505,14 @@ export const getQbConfigs: (searchIndex: SearchIndex) => BasicConfig = (
           ...getServiceQueryBuilderFields(SearchIndex.TOPIC),
         },
       };
+    case SearchIndex.TEAM:
+      return {
+        ...getInitialConfigWithoutFields(),
+        fields:{
+        ...getCommonQueryBuilderFields(SearchIndex.Team)
+        ...getServiceQueryBuilderFields(SearchIndex.Team)
+        },
+      }
 
     default:
       return {

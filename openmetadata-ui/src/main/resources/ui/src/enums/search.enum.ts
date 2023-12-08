@@ -24,4 +24,5 @@ export enum SearchIndex {
   CONTAINER = 'container_search_index',
   QUERY = 'query_search_index',
   TEST_CASE = 'test_case_search_index',
+  TEAM= 'team_search_index'
 }

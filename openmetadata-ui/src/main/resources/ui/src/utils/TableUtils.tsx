@@ -58,6 +58,7 @@ import {
   getTableTabPath,
   getTagsDetailsPath,
   getTopicDetailsPath,
+  getTeamDetailsPath,
   TEXT_BODY_COLOR,
 } from '../constants/constants';
 import { GlobalSettingsMenuCategory } from '../constants/GlobalSettings.constants';
@@ -239,7 +240,7 @@ export const getEntityLink = (
 
     case EntityType.TEAM:
     case SearchIndex.TEAM:
-        return get
+        return getTeamDetailsPath(fullyQualifiedName)
 
     case EntityType.MLMODEL:
     case SearchIndex.MLMODEL:
@@ -318,6 +319,9 @@ export const getEntityIcon = (indexType: string) => {
     case EntityType.GLOSSARY_TERM:
       return <IconTerm />;
 
+    case SearchIndex.TEAM:
+    case EntityType.TEAM:
+        return <IconTeam/>
     case SearchIndex.TABLE:
     case EntityType.TABLE:
     default:

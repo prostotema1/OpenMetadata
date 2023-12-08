@@ -23,4 +23,5 @@ export enum FilterPatternEnum {
   MLMODEL = 'mlModel',
   CONTAINER = 'container',
   DASHBOARD_DATAMODEL = 'dataModel',
+  TEAM = 'team'
 }
